@@ -1276,9 +1276,15 @@ class AddAppiontmentService {
             return res;
         }));
     }
+    // getAppointment( ) {
+    //   return this.http.get<any>('http://localhost:3000/posts').pipe(map((res:any)=> {
+    //     return res;
+    //   }))
+    // }
     getAppointment() {
-        return this.http.get('http://localhost:3000/posts').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_0__["map"])((res) => {
-            return res;
+        return this.http.get('assets/db.json').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_0__["map"])((res) => {
+            console.log('Fetched JSON:', res);
+            return res.posts; // Or just `res` depending on your JSON structure
         }));
     }
     updateAppointment(data, id) {
@@ -6541,7 +6547,7 @@ __webpack_require__.r(__webpack_exports__);
 // import { EditDoctorComponent } from './doctors/components/edit-doctor/edit-doctor.component';
 // import { EditComponent } from './edit/edit.component';
 const routes = [
-    { path: '', redirectTo: '/doctors', pathMatch: 'full' },
+    { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
     { path: 'login', component: _shared_login_login_component__WEBPACK_IMPORTED_MODULE_10__["LoginComponent"] },
     { path: 'signup', component: _shared_signup_signup_component__WEBPACK_IMPORTED_MODULE_11__["SignupComponent"] },
     { path: 'allAppointments', component: _appointments_components_all_appointments_all_appointments_component__WEBPACK_IMPORTED_MODULE_3__["AllAppointmentsComponent"] },
